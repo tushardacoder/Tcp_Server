@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace Tcp_Server
 {
 
-    class RequestContext()
+   public class RequestContext()
     {
         public String Method { get; set; }=String.Empty; // get , post
 
@@ -23,10 +23,12 @@ namespace Tcp_Server
     {
 
         private readonly int _port;
+        private readonly Router _router;
 
-        public TcpServer(int port)
+        public TcpServer(int port, Router router)
         {
-             _port = port;
+            _port = port;
+            _router = router;
 
         }
 
@@ -92,7 +94,8 @@ namespace Tcp_Server
 
 
             // Create a simple response that just echoes the requested path
-            var responseText = $"You requested {context.Path}";
+            //var responseText = $"You requested {context.Path}";
+            var responseText = _router.Resolve(context);
 
             // Convert the response to bytes
             // Include basic HTTP response headers
