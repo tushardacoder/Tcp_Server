@@ -16,6 +16,14 @@ namespace Tcp_Server
         public String Method { get; set; }=String.Empty; // get , post
 
         public String Path {  get; set; }=String.Empty;// request path  e.g: /hello
+
+        // Dynamic route parameters
+        //public Dictionary<string, object> RouteValues { get; }
+        //    = new Dictionary<string, object>();
+
+        // Store dynamic route parameters
+        public Dictionary<string, object> RouteValues { get; } = new(StringComparer.OrdinalIgnoreCase);
+
     }
 
     // Tcp server class that listens for incoming tcp connections

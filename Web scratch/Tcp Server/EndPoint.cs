@@ -42,8 +42,39 @@ namespace Tcp_Server
         // Request:  GET /hello/world
         // Result:   true (because it starts with "/hello")
         public bool Matches(RequestContext ctx)
-            => ctx.Path.StartsWith(Path) &&
-               ctx.Method!.Equals(Method, StringComparison.OrdinalIgnoreCase);
+        {
+            if (!ctx.Method!.Equals(Method,
+                StringComparison.OrdinalIgnoreCase))
+                return false;
+
+            var patternParts = Path.Trim('/').Split('/');
+            var pathParts = ctx.Path.Trim('/').Split('/');
+
+            if (patternParts.Length != pathParts.Length)
+                return false;
+
+            for (int i = 0; i < patternParts.Length; i++)
+            {
+                var patternPart = patternParts[i];
+                var pathPart = pathParts[i];
+
+                // Route parameter
+                if (patternPart.StartsWith("{") &&
+                    patternPart.EndsWith("}"))
+                {
+                    var key = patternPart
+                        .Trim('{', '}');
+
+                    ctx.RouteValues[key] = pathPart;
+                }
+                else if (patternPart != pathPart)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
 
     }
 }

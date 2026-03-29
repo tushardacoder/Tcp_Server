@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace Tcp_Server
 {
@@ -37,6 +38,10 @@ namespace Tcp_Server
         {
             _endpoints.Add(new EndPoint(path, "GET", handler));
         }
+
+
+
+        // Match incoming path and extract route parameters
 
 
         // Registers a POST endpoint

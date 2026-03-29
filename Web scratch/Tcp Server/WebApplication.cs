@@ -24,9 +24,44 @@ namespace Tcp_Server
         // Manually register a GET route
         public MiniWebApplication MapGet(string pattern, Func<RequestContext, string> handler)
         {
-            _router.MapGet(pattern, handler);  // Add route to router
-            return this;                       // Return "this" to allow chaining
+            _router.MapGet(pattern, handler);
+            return this;
         }
+        public MiniWebApplication MapGet<T>(string pattern, T handler) where T : Delegate
+        {
+            Func<RequestContext, string> requestDelegate = ctx =>
+            {
+                var parameters = handler.Method.GetParameters();
+                var values = new object?[parameters.Length];
+
+                for (int i = 0; i < parameters.Length; i++)
+                {
+                    var param = parameters[i];
+
+                    if (param.ParameterType == typeof(RequestContext))
+                    {
+                        values[i] = ctx;
+                    }
+                    else if (ctx.RouteValues.TryGetValue(param.Name!, out var value))
+                    {
+                        values[i] = Convert.ChangeType(value, param.ParameterType);
+                    }
+                    else
+                    {
+                        values[i] = param.HasDefaultValue ? param.DefaultValue : null;
+                    }
+                }
+
+                var result = handler.DynamicInvoke(values);
+                return result?.ToString() ?? string.Empty;
+            };
+
+            _router.MapGet(pattern, requestDelegate);
+
+            return this;
+        }
+
+
 
         // Manually register a POST route
         public MiniWebApplication MapPost(string pattern, Func<RequestContext, string> handler)
