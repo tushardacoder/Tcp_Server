@@ -1,156 +1,117 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Reflection;
 using Tcp_Server;
 
-namespace Tcp_Server
+// This is the main class of our mini web framework.
+// It ties together the ServiceCollection (controllers) and Router (endpoints),
+// and provides an easy API to register routes or controllers.
+class MiniWebApplication(ServiceProvider services)
 {
+    /// <summary>
+    /// Holds the ServiceProvider instance which contains all registered services
+    /// including controllers. This allows the application to resolve controller
+    /// instances dynamically when handling requests.
+    /// 
+    /// In other words, this is the main **dependency container** for the app,
+    /// so you can access any service or controller registered in the ServiceCollection.
+    /// </summary>
+    public readonly ServiceProvider Services = services;
 
-    // This is the main class of our mini web framework.
-    // It ties together the ServiceCollection (controllers) and Router (endpoints),
-    // and provides an easy API to register routes or controllers.
-    class MiniWebApplication(ServiceCollection services)
+    // Router handles mapping of incoming requests to endpoints
+    private readonly Router _router = new();
+
+    // Manually register a GET route
+    public MiniWebApplication MapGet(string pattern, Func<RequestContext, string> handler)
     {
-        // Store the service collection (contains discovered controllers)
-        private readonly ServiceCollection _services = services;
+        _router.MapGet(pattern, handler);  // Add route to router
+        return this;                       // Return "this" to allow chaining
+    }
 
-        // Router handles mapping of incoming requests to endpoints
-        private readonly Router _router = new();
+    // Manually register a POST route
+    public MiniWebApplication MapPost(string pattern, Func<RequestContext, string> handler)
+    {
+        _router.MapPost(pattern, handler); // Add route to router
+        return this;                       // Return "this" to allow chaining
+    }
 
-        // Manually register a GET route
-        public MiniWebApplication MapGet(string pattern, Func<RequestContext, string> handler)
+    // Automatically map controller methods as routes
+    public MiniWebApplication MapControllers()
+    {
+        // Get all controller classes discovered by ServiceCollection
+        var controllerTypes = Services.GetControllerTypes();
+
+        // Loop through each controller class
+        foreach (var controller in controllerTypes)
         {
-            _router.MapGet(pattern, handler);
-            return this;
-        }
-        public MiniWebApplication MapGet<T>(string pattern, T handler) where T : Delegate
-        {
-            Func<RequestContext, string> requestDelegate = ctx =>
+            // Get all public instance methods in the controller
+            var methods = controller.GetMethods(BindingFlags.Instance | BindingFlags.Public);
+
+            foreach (var method in methods)
             {
-                var parameters = handler.Method.GetParameters();
-                var values = new object?[parameters.Length];
+                // Check if the method has an HTTP attribute (HttpGet or HttpPost)
+                var attr = method.GetCustomAttributes<HttpMethodAttribute>().FirstOrDefault();
 
-                for (int i = 0; i < parameters.Length; i++)
+                if (attr != null)
                 {
-                    var param = parameters[i];
+                    // If it's a GET method, map it in the router
+                    if (attr.Method == "GET")
+                        _router.MapGet(attr.Path, ctx =>
+                        {
+                            // Create an instance of the controller
+                            var instance = Activator.CreateInstance(controller);
 
-                    if (param.ParameterType == typeof(RequestContext))
-                    {
-                        values[i] = ctx;
-                    }
-                    else if (ctx.RouteValues.TryGetValue(param.Name!, out var value))
-                    {
-                        values[i] = Convert.ChangeType(value, param.ParameterType);
-                    }
-                    else
-                    {
-                        values[i] = param.HasDefaultValue ? param.DefaultValue : null;
-                    }
-                }
+                            // Invoke the method and get the result
+                            var result = method.Invoke(instance, null);
 
-                var result = handler.DynamicInvoke(values);
-                return result?.ToString() ?? string.Empty;
-            };
+                            // Return the result as a string
+                            return result?.ToString() ?? "";
+                        });
 
-            _router.MapGet(pattern, requestDelegate);
-
-            return this;
-        }
-
-
-
-        // Manually register a POST route
-        public MiniWebApplication MapPost(string pattern, Func<RequestContext, string> handler)
-        {
-            _router.MapPost(pattern, handler); // Add route to router
-            return this;                       // Return "this" to allow chaining
-        }
-
-        // Automatically map controller methods as routes
-        public MiniWebApplication MapControllers()
-        {
-            // Get all controller classes discovered by ServiceCollection
-            var controllerTypes = _services.GetControllerTypes();
-
-            // Loop through each controller class
-            foreach (var controller in controllerTypes)
-            {
-                // Get all public instance methods in the controller
-                var methods = controller.GetMethods(BindingFlags.Instance | BindingFlags.Public);
-
-                foreach (var method in methods)
-                {
-                    // Check if the method has an HTTP attribute (HttpGet or HttpPost)
-                    var attr = method.GetCustomAttributes<HttpMethodAttribute>().FirstOrDefault();
-
-                    if (attr != null)
-                    {
-                        // If it's a GET method, map it in the router
-                        if (attr.Method == "GET")
-                            _router.MapGet(attr.Path, ctx =>
-                            {
-                                // Create an instance of the controller
-                                var instance = Activator.CreateInstance(controller);
-
-                                // Invoke the method and get the result
-                                var result = method.Invoke(instance, null);
-
-                                // Return the result as a string
-                                return result?.ToString() ?? "";
-                            });
-
-                        // If it's a POST method, map it in the router
-                        else if (attr.Method == "POST")
-                            _router.MapPost(attr.Path, ctx =>
-                            {
-                                var instance = Activator.CreateInstance(controller);
-                                var result = method.Invoke(instance, null);
-                                return result?.ToString() ?? "";
-                            });
-                    }
+                    // If it's a POST method, map it in the router
+                    else if (attr.Method == "POST")
+                        _router.MapPost(attr.Path, ctx =>
+                        {
+                            var instance = Activator.CreateInstance(controller);
+                            var result = method.Invoke(instance, null);
+                            return result?.ToString() ?? "";
+                        });
                 }
             }
-
-            return this; // Allow method chaining
         }
 
-        // Start the server and listen for incoming requests
-        public async Task RunAsync(int port = 5000)
-        {
-            // Create a TCP server with the configured router
-            var server = new TcpServer(port,_router);
+        return this; // Allow method chaining
+    }
 
-            // Start listening asynchronously
-            await server.StartAsync();
-        }
+    // Start the server and listen for incoming requests
+    public async Task RunAsync(int port = 5000)
+    {
+        // Create a TCP server with the configured router
+        var server = new TcpServer(port, _router);
+
+        // Start listening asynchronously
+        await server.StartAsync();
     }
 }
 
-    // Builder for MiniWebApplication
-    class MiniWebApplicationBuilder
+// Builder for MiniWebApplication
+class MiniWebApplicationBuilder
+{
+    // Create a ServiceCollection to hold controllers
+    public ServiceCollection Services { get; } = new ServiceCollection();
+
+    // Build a MiniWebApplication using the registered services
+    public MiniWebApplication Build()
     {
-        // Create a ServiceCollection to hold controllers
-        public ServiceCollection Services { get; } = new ServiceCollection();
-
-        // Build a MiniWebApplication using the registered services
-        public MiniWebApplication Build()
-        {
-              return new MiniWebApplication(Services);
-        }
+        var provider = Services.BuildServiceProvider();
+        return new(provider);
     }
+}
 
-    // Factory class to start building an app
-    static class WebApplicationfactory
+// Factory class to start building an app
+static class WebApplicationFactory
+{
+    // Create a new builder
+    public static MiniWebApplicationBuilder CreateBuilder()
     {
-        // Create a new builder
-        public static MiniWebApplicationBuilder CreateBuilder()
-        {
-             return new MiniWebApplicationBuilder();
-        }
-        
+        return new MiniWebApplicationBuilder();
     }
-
+}

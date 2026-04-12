@@ -14,24 +14,72 @@ namespace Tcp_Server
     // so we can understand how controllers are discovered.
     public class ServiceCollection
     {
-        // This list will store all the controller classes we find.
-        private readonly List<Type> _controllerTypes = [];
+        private readonly List<ServiceDescriptor> _services = [];
 
+        public void AddTransient<TService>()
+        {
+            var typeOfService = typeof(TService);
+            AddTransient(typeOfService, typeOfService);
+        }
+
+        public void AddSingleton<TService>()
+        {
+            var typeOfService = typeof(TService);
+            AddSingleton(typeOfService, typeOfService);
+        }
+
+        public void AddScoped<TService>()
+        {
+            var typeOfService = typeof(TService);
+            AddScoped(typeOfService, typeOfService);
+        }
+
+
+        public void AddTransient<TService, TImplementation>()
+        {
+            _services.Add(new ServiceDescriptor(typeof(TService), typeof(TImplementation), ServiceLifetime.Transient));
+        }
+
+        public void AddTransient(Type serviceType, Type implementationType)
+        {
+            _services.Add(new ServiceDescriptor(serviceType, implementationType, ServiceLifetime.Transient));
+        }
+
+        public void AddSingleton<TService, TImplementation>()
+        {
+            _services.Add(new ServiceDescriptor(typeof(TService), typeof(TImplementation), ServiceLifetime.Singleton));
+        }
+
+        public void AddSingleton(Type serviceType, Type implementationType)
+        {
+            _services.Add(new ServiceDescriptor(serviceType, implementationType, ServiceLifetime.Singleton));
+        }
+
+        public void AddScoped<TService, TImplementation>()
+        {
+            _services.Add(new ServiceDescriptor(typeof(TService), typeof(TImplementation), ServiceLifetime.Scoped));
+        }
+
+        public void AddScoped(Type serviceType, Type implementationType)
+        {
+            _services.Add(new ServiceDescriptor(serviceType, implementationType, ServiceLifetime.Scoped));
+        }
+
+       
         // Call this method to discover all controller classes in our project.
         // A "controller class" is any class whose name ends with "Controller"
         // (like UserController, ProductController, etc.)
         public void AddControllers()
         {
-            // Get all the classes in the current project/assembly
             var controllers = Assembly.GetExecutingAssembly().GetTypes()
-                // Only keep classes that end with "Controller"
                 .Where(t => t.IsClass && t.Name.EndsWith("Controller"));
 
-            // Add the found classes to our internal list
-            _controllerTypes.AddRange(controllers);
+            foreach (var ctrl in controllers)
+            {
+                AddTransient(ctrl, ctrl);
+            }
         }
 
-        // Returns the list of all controller classes we found.
-        public List<Type> GetControllerTypes() => _controllerTypes;
+        public ServiceProvider BuildServiceProvider() => new(_services);
     }
 }
