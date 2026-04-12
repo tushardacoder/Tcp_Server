@@ -11,6 +11,22 @@
       "RelativeMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|solutionrelative:tcp server\\tcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|f:\\tcp_server\\web scratch\\tcp server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|solutionrelative:tcp server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|f:\\tcp_server\\web scratch\\tcp server\\servicescope.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|solutionrelative:tcp server\\servicescope.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|f:\\tcp_server\\web scratch\\tcp server\\serviceprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|solutionrelative:tcp server\\serviceprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|f:\\tcp_server\\web scratch\\tcp server\\servicedescriptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|solutionrelative:tcp server\\servicedescriptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|f:\\tcp_server\\web scratch\\tcp server\\servicecollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|solutionrelative:tcp server\\servicecollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,16 +35,20 @@
       "RelativeMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|solutionrelative:tcp server\\router.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|f:\\tcp_server\\web scratch\\tcp server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|solutionrelative:tcp server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|f:\\tcp_server\\web scratch\\tcp server\\httpmethodattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|solutionrelative:tcp server\\httpmethodattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|f:\\tcp_server\\web scratch\\tcp server\\exampleclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|solutionrelative:tcp server\\exampleclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|f:\\tcp_server\\web scratch\\tcp server\\endpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|solutionrelative:tcp server\\endpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|f:\\tcp_server\\web scratch\\tcp server\\tcp server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C67A8881-5571-4186-BB15-01C4E9EAB0A0}|Tcp Server\\Tcp Server.csproj|solutionrelative:tcp server\\tcp server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,56 +58,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "HttpMethodAttribute.cs",
-              "DocumentMoniker": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\HttpMethodAttribute.cs",
-              "RelativeDocumentMoniker": "Tcp Server\\HttpMethodAttribute.cs",
-              "ToolTip": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\HttpMethodAttribute.cs",
-              "RelativeToolTip": "Tcp Server\\HttpMethodAttribute.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAA/wE8AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "ExampleClass.cs",
+              "DocumentMoniker": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\ExampleClass.cs",
+              "RelativeDocumentMoniker": "Tcp Server\\ExampleClass.cs",
+              "ToolTip": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\ExampleClass.cs",
+              "RelativeToolTip": "Tcp Server\\ExampleClass.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-28T04:10:58.36Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "EndPoint.cs",
-              "DocumentMoniker": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\EndPoint.cs",
-              "RelativeDocumentMoniker": "Tcp Server\\EndPoint.cs",
-              "ToolTip": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\EndPoint.cs",
-              "RelativeToolTip": "Tcp Server\\EndPoint.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-28T03:29:25.426Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Router.cs",
-              "DocumentMoniker": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\Router.cs",
-              "RelativeDocumentMoniker": "Tcp Server\\Router.cs",
-              "ToolTip": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\Router.cs",
-              "RelativeToolTip": "Tcp Server\\Router.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAnwFMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-28T03:24:12.11Z",
+              "WhenOpened": "2026-04-06T10:47:11.046Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\Program.cs",
+              "RelativeDocumentMoniker": "Tcp Server\\Program.cs",
+              "ToolTip": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\Program.cs",
+              "RelativeToolTip": "Tcp Server\\Program.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T07:00:02.19Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ServiceDescriptor.cs",
+              "DocumentMoniker": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\ServiceDescriptor.cs",
+              "RelativeDocumentMoniker": "Tcp Server\\ServiceDescriptor.cs",
+              "ToolTip": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\ServiceDescriptor.cs",
+              "RelativeToolTip": "Tcp Server\\ServiceDescriptor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T10:05:21.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ServiceProvider.cs",
+              "DocumentMoniker": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\ServiceProvider.cs",
+              "RelativeDocumentMoniker": "Tcp Server\\ServiceProvider.cs",
+              "ToolTip": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\ServiceProvider.cs",
+              "RelativeToolTip": "Tcp Server\\ServiceProvider.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAIwCkAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T10:38:48.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ServiceScope.cs",
+              "DocumentMoniker": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\ServiceScope.cs",
+              "RelativeDocumentMoniker": "Tcp Server\\ServiceScope.cs",
+              "ToolTip": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\ServiceScope.cs",
+              "RelativeToolTip": "Tcp Server\\ServiceScope.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-12T08:57:04.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TcpServer.cs",
+              "DocumentMoniker": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\TcpServer.cs",
+              "RelativeDocumentMoniker": "Tcp Server\\TcpServer.cs",
+              "ToolTip": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\TcpServer.cs",
+              "RelativeToolTip": "Tcp Server\\TcpServer.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAD4vxsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T07:00:37.642Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "ServiceCollection.cs",
               "DocumentMoniker": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\ServiceCollection.cs",
               "RelativeDocumentMoniker": "Tcp Server\\ServiceCollection.cs",
               "ToolTip": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\ServiceCollection.cs",
               "RelativeToolTip": "Tcp Server\\ServiceCollection.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAArwCUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAAswEgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-28T03:02:18.53Z",
               "EditorCaption": ""
@@ -100,36 +161,61 @@
               "RelativeDocumentMoniker": "Tcp Server\\WebApplication.cs",
               "ToolTip": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\WebApplication.cs",
               "RelativeToolTip": "Tcp Server\\WebApplication.cs",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAvwJcAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAwCQAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-28T02:53:14.729Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TcpServer.cs",
-              "DocumentMoniker": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\TcpServer.cs",
-              "RelativeDocumentMoniker": "Tcp Server\\TcpServer.cs",
-              "ToolTip": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\TcpServer.cs",
-              "RelativeToolTip": "Tcp Server\\TcpServer.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAADgv4AAAAABAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "HttpMethodAttribute.cs",
+              "DocumentMoniker": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\HttpMethodAttribute.cs",
+              "RelativeDocumentMoniker": "Tcp Server\\HttpMethodAttribute.cs",
+              "ToolTip": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\HttpMethodAttribute.cs",
+              "RelativeToolTip": "Tcp Server\\HttpMethodAttribute.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAowE8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T07:00:37.642Z",
+              "WhenOpened": "2026-03-28T04:10:58.36Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\Program.cs",
-              "RelativeDocumentMoniker": "Tcp Server\\Program.cs",
-              "ToolTip": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\Program.cs",
-              "RelativeToolTip": "Tcp Server\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "Router.cs",
+              "DocumentMoniker": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\Router.cs",
+              "RelativeDocumentMoniker": "Tcp Server\\Router.cs",
+              "ToolTip": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\Router.cs",
+              "RelativeToolTip": "Tcp Server\\Router.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T07:00:02.19Z",
+              "WhenOpened": "2026-03-28T03:24:12.11Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "EndPoint.cs",
+              "DocumentMoniker": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\EndPoint.cs",
+              "RelativeDocumentMoniker": "Tcp Server\\EndPoint.cs",
+              "ToolTip": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\EndPoint.cs",
+              "RelativeToolTip": "Tcp Server\\EndPoint.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-28T03:29:25.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Tcp Server.csproj",
+              "DocumentMoniker": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\Tcp Server.csproj",
+              "RelativeDocumentMoniker": "Tcp Server\\Tcp Server.csproj",
+              "ToolTip": "F:\\Tcp_Server\\Web scratch\\Tcp Server\\Tcp Server.csproj",
+              "RelativeToolTip": "Tcp Server\\Tcp Server.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-06T09:44:17.987Z"
             }
           ]
         }
